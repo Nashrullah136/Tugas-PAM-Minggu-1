@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    body {
+        width: 280px;
+        height: 653px;
+    }
+</style>
+
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Centro comercial Moctezuma</td>
+            <td>18315</td>
+            <td>64</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jaydin Guzman</td>
+            <td>37174</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Kason Cruz</td>
+            <td>40654</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Maddox Walton</td>
+            <td>24219</td>
+            <td>66</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Tobias Moreno</td>
+            <td>12328</td>
+            <td>66</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Frankie Forbes</td>
+            <td>46428</td>
+            <td>96</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Braeden Wilkerson</td>
+            <td>20425</td>
+            <td>82</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Zoey Lopez</td>
+            <td>33616</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Aiden Bowers</td>
+            <td>88134</td>
+            <td>56</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Alfreds Futterkiste</td>
+            <td>91616</td>
+            <td>32</td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    var text = document.createTextNode('Huruf Mutu');
+    var th = document.createElement('th');
+    th.appendChild(text);
+    var rows = document.getElementsByTagName("tbody")[0].children;
+    for (let index = 0; index < rows.length; index++) {
+        const row = rows[index];
+        if (index == 0) {
+            row.appendChild(th);
+        }
+        else {
+            var nilai = parseInt(row.children[3].innerHTML);
+            var huruf = 'E';
+            if(nilai >= 80){
+                huruf = 'A';
+            }
+            else if (nilai >= 70){
+                huruf = 'AB';
+            }
+            else if(nilai >= 60){
+                huruf = 'B';
+            }
+            else if(nilai >= 50){
+                huruf = 'BC';
+            }
+            else if(nilai >= 40){
+                huruf = 'C';
+            }
+            else if(nilai >= 10){
+                huruf = 'D';
+            }
+            let td = document.createElement('td');
+            let text = document.createTextNode(huruf);
+            td.appendChild(text);
+            row.appendChild(td);
+        }
+    }
+</script>
+
+</html>
